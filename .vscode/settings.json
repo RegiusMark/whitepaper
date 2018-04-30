@@ -1,0 +1,17 @@
+{
+  "latex-workshop.latex.outputDir": "out",
+  "latex-workshop.latex.toolchain": [
+    {
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=out",
+        "-pdf",
+        "%DOC%"
+      ]
+    }
+  ],
+  "editor.wordWrap": "bounded"
+}

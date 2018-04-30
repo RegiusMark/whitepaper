@@ -1,0 +1,428 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage[maxnames=5]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  citecolor=blue,
+  filecolor=black,
+  linkcolor=[rgb]{0.1,0.3,0.7},
+  urlcolor=black
+}
+
+\usepackage[toc,nopostdot]{glossaries}
+
+\setlength{\parindent}{0pt}
+\frenchspacing
+
+\include{glossary}
+
+\begin{document}
+  \begin{center}
+    \includegraphics[width=50mm]{logo.png}\\
+    \vspace{3mm}
+
+    \Huge{\textbf{GODCOIN}}\\
+    \vspace{3mm}
+    \normalsize{www.godcoin.gold}\\
+    \normalsize{contact@godcoin.gold}
+
+    \normalsize{\today}
+
+    \vspace{3mm}
+    \LARGE{\textbf{THE OFFICIAL COIN OF CHRIST}}
+    \vspace{3mm}
+
+    \large{\textbf{THE TIME HAS COME}}
+    \vspace{2mm}
+
+    \normalsize{\color{Red}\textit{\textbf{Haggai 2:8 The silver is mine, and
+    the gold is mine, saith the Lord of hosts!}}}
+
+    \normalsize{\color{Red}\textit{\textbf{Revelation 3:18 I counsel you to buy
+    gold from me, proved by fire, that you may prosper,}}}
+
+    \vspace{5mm}
+
+    \normalsize{\textbf{The Lord declared that the gold and silver is His! He
+    tells us to buy from Him so that we may prosper. GODcoin is here to unite
+    the world under a single currency. Stability will be provided to the world
+    with a currency backed by physical gold and silver now under God's rule.}}
+
+    \vspace{3mm}
+  \end{center}
+
+  \newpage
+  \begin{center}
+    \textbf{DISCLAIMER OF LIABILITY}
+  \end{center}
+  The purpose of this White Paper is to present GODcoin to potential coin minters and holders in connection with the proposed coin minting process and sale. The information provided in this document may not be exhaustive, and it will not imply any elements of a contractual relationship. Its sole purpose is to provide relevant and reasonable information to potential coin holders who wish to mint or purchase GODcoin while it is available on the open market.\\
+
+  Nothing in this White Paper shall be deemed to constitute a prospectus of any sort or a solicitation for investment, nor does it in any way pertain to an offering or a solicitation of an offer to buy any securities in any jurisdiction. This document is not composed in accordance with, and is not subject to, laws or regulations of any jurisdiction, which are designed to protect investors.\\
+
+  GODcoin is not a security, and has not been registered under the Securities Act, the securities laws of any state of the United States or the securities laws of any country, including the securities laws of any jurisdiction in which a potential coin holder is a resident.\\
+
+  GODcoin is not intended for sale or use in any jurisdiction where sale or use of the coin may be prohibited.\\
+
+  GODcoin confers no other rights in any form, including but not limited to any ownership, distribution (including but not limited to profit), redemption, liquidation, proprietary (including all forms of intellectual property), or other financial or legal rights, other than those specifically described in the White Paper.
+
+  \newpage
+  \begin{center}
+    \Large{\textbf{Abstract}}
+  \end{center}
+  \setlength{\parindent}{0pt}
+  \vspace{3mm}
+  \noindent{\textbf{\textit{\large{Revelation} 21:5 Behold, I make all things
+  new}}}
+  \vspace{3mm}
+
+  There are over 1,400 cryptocurrencies and 180 fiat currencies in
+  the world today. Many governments around the world are proving to be
+  unstable, and this has pushed consumers to flock towards Bitcoin and the
+  multitude of alternate cryptocurrencies, which have rapidly grown in their
+  popularity in recent years. These alternative currencies have served as the
+  training grounds for what will soon be the One World Currency, which is
+  coming in 2018 – GODcoin.\\
+
+  In short, GODcoin will be the perfect currency, because it is the currency
+  of Christ. It will be the currency of His new Government, which will be
+  established very soon, and it will eliminate all other currencies, leaving
+  it to be the only formally accepted form of money.\\
+
+  Early investors have the opportunity to secure their wealth for the future
+  ahead, so the time to invest is now. wait until after the ICO investment
+  phase, when GODcoin becomes the common currency for wages throughout the
+  world, unfortunately the opportunity to profit through early investment will
+  no longer be available.
+
+  \medskip
+  \textit{Note:} This document is a work in progress and will be continuously
+  updated.
+
+  \newpage
+  \tableofcontents
+  \newpage
+
+  \section{Introduction}
+  \textbf{GODcoin has the edge in security, because unlike other
+  cryptocurrencies, it is \textit{backed by Gold and Silver}, which will ensure
+  stability. This carries additional incentives, such as \textit{lower fees,
+  faster transaction times, and energy efficiency.}}\\
+
+  \Glspl{cryptocurrency} such as Bitcoin have been successful examples in
+  creating a distributed \gls{network} that users could trust, and many of these
+  currencies have experienced a tremendous increase in value, regardless of
+  having no backing. It has marked a significant beginning to the digital
+  currency world that users can trust, becoming what many have called \"digital
+  gold\". However, the market for Bitcoin is still \gls{volatile}, leaving
+  consumers susceptible to absurd fluctuations in its value. GODcoin will solve
+  this issue by being backed by physical assets. Because these assets cannot be
+  fabricated out of thin air, GODcoin will allow us to maintain a stable
+  economy, while providing citizens with a currency that keeps pace with the
+  latest technological advancements, all controlled as a fiat issued by
+  Christ.\\
+
+  GODcoin will be simple, efficient, and secure because it will use a
+  \textit{\gls{Proof-of-Stake}} (PoS) system of \gls{minting}. By
+  using \textit{Proof-of-Stake}, the energy saving costs are enormous in
+  comparison to the commonly used \textit{\gls{Proof-of-Work}} (PoW)
+  consensus algorithm that Bitcoin and so many other cryptocurrencies rely on.\\
+
+  PoW requires complex computations to be carried out for \gls{blocks} to be
+  added to the network. In the beginning, there were no issues with this system,
+  but as time went on, the average miner could no longer mine without paying
+  more in energy costs. This has put Bitcoin \gls{mining} under the control of
+  large corporations with computer farms, which is not what Bitcoin was
+  originally intended for. With growing demand for Bitcoin, the network has
+  become overloaded, resulting in much higher fees for transactions to be
+  processed. However, PoS will prove to be far more effective because it will
+  process transactions quickly at a small fraction of the energy required.\\
+
+  The GODcoin blockchain will contain two virtual assets with the names of gold
+  and silver. These virtual assets will be backed by physical gold and silver,
+  ensuring a stable market, rather than a volatile market.\\
+
+  The following sections will explain the more technical aspects of GODcoin,
+  including the minting and transaction process that GODcoin will rely on.
+  Minters will be able to strengthen the network by validating the history of
+  the \gls{blockchain}, and any future blocks that are created. The process for
+  this will be outlined in \underline{\hyperref[sec:PoS]{section 2}}. If you are
+  not a minter, but you desire to know how the exchange of transactions will
+  function, you may refer to \underline{\hyperref[sec:Transactions]{section 3}}.
+
+  \section{Proof-of-Stake}\label{sec:PoS}
+  \textbf{The intention is to be more \textit{energy and time efficient}. This
+  will save on overall costs, and will be more \textit{transaction-friendly} to
+  the consumer.}\\
+
+  Blocks will be produced through a process called minting. In
+  \glspl{decentralized-system}, there are multiple \glspl{node} on the
+  \gls{network} producing blocks. An algorithm needs to be in place to reach
+  consensus on which block is added to the network. Without a
+  \gls{consensus-algorithm} in place, nodes will keep forking the blockchain in
+  favor of its own blockchain. This results in either a completely centralized
+  system or a useless distributed network.\\
+
+  GODcoin will use the \textit{Proof-of-stake} consensus algorithm for the
+  minting process. This presents a couple significant advantages, transactions
+  will be processed quickly and energy efficiency is drastically improved over
+  the commonly used \textit{Proof-of-Work}. Minters will be able to run a node
+  on resource constrained systems provided there is adequate disk space.
+
+  \subsection{Bonds}
+  \textbf{Bonds ensure the \textit{security} of the currency by
+  \textit{preventing} abuse of the network.}\\
+
+  A \gls{bond} must be held to be granted minting privileges. Without the bond a
+  proposed block will be rejected by the network.\\
+
+  A fee must be paid, in digital gold tokens, to obtain a bond. When a minter
+  joins the network, they must wait until the bond transaction is included in a
+  block permanently on the network.\\
+
+  The fee helps to thwart abuse of the network. Let's assume there is no fee.
+  The user with the most minters can easily obtain enough coins for a 51\%
+  attack over a period of time. By moving the funds from the all the minters to
+  a single minter, they will eventually gain enough coins to take over the
+  network.\\
+
+  The fee used to pay for the bond will not be distributed during the reward
+  distribution process. This prevents \glspl{malicious_entity} from regaining
+  their coins back so quickly to setup an attack on the network. Fees encourage
+  long term minting and investment, the minter will eventually regain any coins
+  lost after obtaining a bond.\\
+
+  Bonds will be revoked if no stakes are placed within 360 blocks, approximately
+  6 hours. This requirement is to keep minters online for as much as long as
+  possible but still allowing a small amount of downtime for maintenance.
+
+  \subsection{Minting}
+  \textbf{The minting process requires verification that the bond is valid, so
+  it is a proactive process to ensure \textit{network security}, as well as the
+  creation of a \textit{stable currency}.}\\
+
+  \textbf{Part of this process would include minters staking a claim on a
+  proposed block, and the highest stake wins. This is to ensure
+  \textit{consensus in a decentralized network. Any found dysfunctional or
+  dishonest nodes will be removed to ensure network stability and security.}}\\
+
+  Minters must have a valid bond and may only propose one block within a round.
+  A round is the process of including new transactions and determining which
+  block will be added to the network. Minters without a valid bond or multiple
+  blocks proposed by a minter will have their proposed blocks rejected. Nodes
+  that continue to misbehave can be temporarily or permanently banned from the
+  network and any valid bonds will be revoked.\\
+
+  Blocks will be proposed after 50 seconds of the previous generated block. In
+  another 10 seconds, the proposal deadline has been reached and any new
+  proposals will be rejected. The network will consider that node to be offline
+  until they generate and propose a block in a future minting round.\\
+
+  Nodes place a stake, for their proposed block, with a minimum amount of one
+  gold coin. During the round, the funds will be completely unavailable to the
+  minter until the block has been finalized. The node with the highest stake on
+  their block wins. If there are conflicting proposals with the same stake, the
+  minter that has the highest amount of gold in their wallet will win. If there
+  is still a conflict, the base58\cite{base58} encoded signature will be
+  alphabetically sorted to guarantee a block is chosen.\\
+
+  Consensus will take place in two phases. In the first phase the minter will
+  send their proposed block to all their peers. A block will then be decided
+  when the proposal deadline is reached.\\
+
+  Once the winner block has been decided, we will enter the second phase of the
+  consensus algorithm. The minter that won will have to sign the block again
+  \textit{with} the list of nodes, the node ledger, that proposed a block and
+  resend it to all their peers. The peers will negotiate among each other
+  whether to approve the node ledger. If consensus reaches majority vote the
+  block will be finalized in the blockchain. In the event that the node ledger
+  has been rejected by the majority of the network (which will only happen from
+  a dishonest or malfunctioning node), a runner up winner will be used and the
+  process will repeat until a valid block is finalized.\\
+
+  Naturally, the network will reach consensus with the minter that proposed a
+  block with the highest stake amount. It is possible for the blocks proposed to
+  conflict. A conflicting proposal is determined as two or more blocks produced
+  from minters with the same stake amount. In this case, the fallback mechanism
+  as described above will be used.
+
+  \subsection{Reward Distribution}
+  \textbf{There will be two separate distributions to ensure \textit{fairness},
+  as specified. This is why being a minter is so beneficial.}\\
+
+  First the minters, in descending order by their stake amount, receive 10\% of
+  the remainder of the distribution amount. A secondary distribution will then
+  be distributed based on a weighted average of the total stake amount.
+
+  \begin{equation}
+    w = \sum_{i \in m}i
+  \end{equation}
+  \hspace{2cm}
+  where:
+  \begin{center}
+    \begin{tabular}{>{$}l<{$} @{${}={}$} l}
+      w & total stake used as a weight\\
+      m & multiset of the stakes
+    \end{tabular}
+  \end{center}
+  \begin{equation}
+    a = (s / w) * d
+  \end{equation}
+  \hspace{2cm}
+  where:
+  \begin{center}
+    \begin{tabular}{>{$}l<{$} @{${}={}$} l}
+      a & reward amount \\
+      s & stake amount by an individual minter \\
+      d & remaining distribution amount
+    \end{tabular}
+  \end{center}
+
+  \section{Transactions}\label{sec:Transactions}
+  \textbf{GODcoin will offer \textit{faster} transaction times and
+  \textit{lower} fees.}\\
+
+  Operations performed on the blockchain are named transactions. These can
+  include sending funds from one user to another, or joining the network as a
+  minter. Transactions may require a fee to be processed by the network.
+
+  \subsection{Send Rates}
+  Send rates are determined as the frequency of transactions being sent to the
+  network in a given period of time. Each user will be allowed to send one
+  transaction per ten seconds, irrespective of the asset being transferred.
+  Respectively, this allows a single user to be able to send 8640 transactions
+  in a single day without flooding the network, allowing the fees to remain as
+  low as possible.\\
+
+  Any client that sends more than 10 invalid transactions in a one hour time
+  span will have their IP temporarily banned to prevent \gls{Denial-of-Service}
+  (DoS) attacks against the network.
+
+  \subsection{Fees}
+  Fees will be paid respective to the asset that is being transferred. The fee
+  rate will differ between the assets and will be paid in their respective
+  asset. Gold transfers will pay the fee in gold respectively and likewise for
+  silver.\\
+
+  Normal transactions must include the base fee determined by the network. A
+  transaction must be rejected if the minimum fee is not met. Transactions that
+  pay for more than the minimum fee will be distributed to the minters of the
+  network. Paying more for a minimum fee is unnecessary and will be distributed
+  to minters.
+
+  \subsection{Urgent Transaction Fees}
+  It may be possible that a transaction is absolutely urgent. Urgent
+  transactions allow bypassing the rate limit in exchange for a higher fee. For
+  every transaction that exceeds the limit the user must pay a fee with a 1.2
+  multiplier of the previous transaction fee. This quickly gets very expensive
+  for an attacker, but allows flexibility for a normal user if waiting is not an
+  option.
+
+  \vspace{3mm}
+  Sample based on transferring funds using any asset with a base fee of
+  0.00000500 coins:
+
+  \vspace{3mm}
+  \begin{tabular}{@{}lr@{}}
+    Fees & Transaction Priority \\ \toprule
+    0.00000500 & Normal    \\
+    0.00000600 & Urgent    \\
+    0.00000720 & Urgent    \\
+    0.00000864 & Urgent    \\ \midrule{}
+    Total Fees & 0.00002684 \\
+    \bottomrule
+  \end{tabular}
+
+  \subsection{Transaction Signatures}
+  \textbf{A signature is used to confirm the authenticity of the owner or owners
+  of a particular message or document.}\\
+
+  All transactions will be signed either directly or when a block is produced
+  and gets signed by the minter. \textit{Ed25519}\cite{ed25519} will be used for
+  the digital signing algorithm. Ed25519 is a modern signing algorithm, it
+  provides a similar protection level to NIST P-256 and has fast verification
+  times with small signatures. Running a full node on a mobile device may very
+  well be possible, the limiting factor may be the storage on a given device.\\
+
+  Ed25519 has fewer attack vectors, such as resistance to side-channel attacks
+  and attacks from poor random number generator implementations. While
+  non-deterministic algorithms can suffer from hardware fault attacks, it is
+  extremely difficult to successfully execute. Even with a server running
+  without \gls{ecc-memory} the attack isn't practical in any way over the
+  internet.
+
+  \newpage
+  \section{Conclusion}
+  GODcoin will be the only digitally tradable currency backed by hard assets,
+  and will soon be issued as the currency of the New World Order. The Lord has
+  declared that the gold and silver are His, and in His New Kingdom, only
+  through obedience to Him will anyone be allowed to prosper. In Revelation
+  3:18, the Lord instructs you to buy gold from Him. He says this because very
+  soon there will be no other authorized currency in circulation, so everyone
+  will eventually have to accept it, just as they do with other forms of money
+  today. Those who wisely buy GODcoin early will amass greater wealth as the
+  value of the coin increases, however, those who do not take heed to His
+  instructions, will face significant financial hardship in the future.\\
+
+  Many predictions were made regarding the future coming of a New World
+  Currency, including this one from the cover of a 1988 edition of \textit{The
+  Economist}\cite{the-economist}, where it was strongly hinted that it was
+  planned to arrive in 2018.\\
+
+  \begin{center}
+    \includegraphics[width=50mm]{economist.png}\\
+  \end{center}
+  \vspace{3mm}
+
+  Because the Son of Man was born 50 years ago in 1968, this puts us at the
+  beginning of the Lord’s Jubilee Year, the year when Lord Ra-El must take his
+  throne, and issue the One World Currency.\\
+
+  The time is now to affirm your place of wealth in the New Kingdom, and take
+  part in GODcoin, the only true currency ordained by God, and issued by His
+  Son, Lord Ra-El.\\
+
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=50mm]{coin-front.png}\\
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=50mm]{coin-back.png}\\
+  \end{minipage}
+
+  \newpage
+  \printnoidxglossaries{}
+
+  \textit{Note:} Definitions are based on varying sources that are most accurate
+  to the content provided in this document.
+  \newpage
+
+  \section*{External Links}
+  \begin{itemize}
+    \item{\url{www.godcoin.gold}}
+    \item{\url{www.youtube.com/channel/UCRmsiytZnbMg-O_b2zBNuTg}}
+    \item{\url{www.linkedin.com/company/GODcoin}}
+    \item{\url{https://www.facebook.com/GODcoinCurrency/}}
+    \item{\url{www.twitter.com/GODcoinGold}}
+  \end{itemize}
+  \section*{Meet the Team}
+  \begin{itemize}
+    \item{Chief Executive Officer (CEO) – Richard Ruff, Australia.}
+    \item{Chief Operating Officer (COO) – Kelly Patrick, USA.}
+    \item{Chief Financial Officer (CFO) – Emil Johansson, Sweden.}
+    \item{Chief Marketing Officer (CMO) – Joseph Monte, USA.}
+    \item{Chief Technology Officer (CTO) – Samuel Grenier, USA.}
+    \item{Chief Communications Officer (COO) – Clark Isaac, USA.}
+    \item{Chief Secretarial Officer (CSO) – Samantha Kennedy, UK.}
+    \item{Chief Productions Officer (CPO) – Corey DeFrancesco, USA.}
+  \end{itemize}
+  \printbibliography{}
+\end{document}
