@@ -1,7 +1,8 @@
 {
   "latex-workshop.latex.outputDir": "out",
-  "latex-workshop.latex.toolchain": [
+  "latex-workshop.latex.tools": [
     {
+      "name": "latexmk",
       "command": "latexmk",
       "args": [
         "-synctex=1",
