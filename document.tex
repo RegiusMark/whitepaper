@@ -4,6 +4,7 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{color}
+\usepackage{dirtytalk}
 
 \usepackage[maxnames=5]{biblatex}
 \addbibresource{refs.bib}
@@ -208,50 +209,37 @@
   it is a proactive process to ensure \textit{network security}, as well as the
   creation of a \textit{stable currency}.}\\
 
-  \textbf{Part of this process would include minters staking a claim on a
-  proposed block, and the highest stake wins. This is to ensure
-  \textit{consensus in a decentralized network. Any found dysfunctional or
-  dishonest nodes will be removed to ensure network stability and security.}}\\
+  \textbf{Part of this process would include minters being active in the network
+  by proposing blocks. This is to ensure \textit{consensus in a decentralized
+  network. Any found dysfunctional or dishonest nodes will be removed to ensure
+  network stability and security.}}\\
 
-  Minters must have a valid bond and may only propose one block within a round.
-  A round is the process of including new transactions and determining which
-  block will be added to the network. Minters without a valid bond or multiple
-  blocks proposed by a minter will have their proposed blocks rejected. Nodes
+  Minters must have a valid bond and may only propose one block when it is their
+  turn in the minting schedule. The minting schedule will allow the network to
+  cryptographically validate node participation in a sensible way and reduce
+  network strain by handling only a single proposed block at a time.\\
+
+  Minters that attempt to propose a block when they are not scheduled or are
+  attempting double production, will have their proposed block rejected. Nodes
   that continue to misbehave can be temporarily or permanently banned from the
-  network and any valid bonds will be revoked.\\
+  network.\\
 
-  Blocks will be proposed after 50 seconds of the previous generated block. In
-  another 10 seconds, the proposal deadline has been reached and any new
+  Blocks will be proposed after a set of time of the previous generated block.
+  In another set of time, the proposal deadline has been reached and any new
   proposals will be rejected. The network will consider that node to be offline
   until they generate and propose a block in a future minting round.\\
 
-  Nodes place a stake, for their proposed block, with a minimum amount of one
-  gold coin. During the round, the funds will be completely unavailable to the
-  minter until the block has been finalized. The node with the highest stake on
-  their block wins. If there are conflicting proposals with the same stake, the
-  minter that has the highest amount of gold in their wallet will win. If there
-  is still a conflict, the base58\cite{base58} encoded signature will be
-  alphabetically sorted to guarantee a block is chosen.\\
+  For a block to be accepted, the minter must propose a block that satisfies the
+  constraints of the network. For example, a block will be rejected if it
+  incorrectly calculates the distribution of rewards or signature validation
+  fails.\\
 
-  Consensus will take place in two phases. In the first phase the minter will
-  send their proposed block to all their peers. A block will then be decided
-  when the proposal deadline is reached.\\
-
-  Once the winner block has been decided, we will enter the second phase of the
-  consensus algorithm. The minter that won will have to sign the block again
-  \textit{with} the list of nodes, the node ledger, that proposed a block and
-  resend it to all their peers. The peers will negotiate among each other
-  whether to approve the node ledger. If consensus reaches majority vote the
-  block will be finalized in the blockchain. In the event that the node ledger
-  has been rejected by the majority of the network (which will only happen from
-  a dishonest or malfunctioning node), a runner up winner will be used and the
-  process will repeat until a valid block is finalized.\\
-
-  Naturally, the network will reach consensus with the minter that proposed a
-  block with the highest stake amount. It is possible for the blocks proposed to
-  conflict. A conflicting proposal is determined as two or more blocks produced
-  from minters with the same stake amount. In this case, the fallback mechanism
-  as described above will be used.
+  If a block is rejected or missed by a minter, the next minter in the scheduler
+  will be responsible for proposing a block and so forth until a block is
+  accepted. Keep in mind that banned nodes will by default miss blocks as they
+  will not be able to propose their block. Eventually misbehaving nodes will
+  have their bond and stake forfeited, and as such they will no longer be able
+  to mint blocks.\\
 
   \subsection{Reward Distribution}
   \textbf{There will be two separate distributions to ensure \textit{fairness},
@@ -293,50 +281,40 @@
   include sending funds from one user to another, or joining the network as a
   minter. Transactions may require a fee to be processed by the network.
 
-  \subsection{Send Rates}
-  Send rates are determined as the frequency of transactions being sent to the
-  network in a given period of time. Each user will be allowed to send one
-  transaction per ten seconds, irrespective of the asset being transferred.
-  Respectively, this allows a single user to be able to send 8640 transactions
-  in a single day without flooding the network, allowing the fees to remain as
-  low as possible.\\
-
-  Any client that sends more than 10 invalid transactions in a one hour time
-  span will have their IP temporarily banned to prevent \gls{Denial-of-Service}
-  (DoS) attacks against the network.
-
   \subsection{Fees}
-  Fees will be paid respective to the asset that is being transferred. The fee
-  rate will differ between the assets and will be paid in their respective
-  asset. Gold transfers will pay the fee in gold respectively and likewise for
-  silver.\\
+  Fees will be paid respective to the asset that is being transferred or the
+  asset the transaction type expects. The fee rate may differ between the assets
+  and will be paid in their respective asset. Gold transfers will pay the fee in
+  gold respectively and likewise for silver.\\
 
-  Normal transactions must include the base fee determined by the network. A
-  transaction must be rejected if the minimum fee is not met. Transactions that
-  pay for more than the minimum fee will be distributed to the minters of the
-  network. Paying more for a minimum fee is unnecessary and will be distributed
-  to minters.
+  Transaction fee costs start with a minimum fee. For every additional
+  transaction accepted within the block window the minimum fee is exponentially
+  multiplied by the number of transactions accepted from the applicable address.
+  The fee costs will reset back to the minimum fee after the block window is
+  reset. The block window is reset when transactions are halted on the address
+  for a period of time.\\
 
-  \subsection{Urgent Transaction Fees}
-  It may be possible that a transaction is absolutely urgent. Urgent
-  transactions allow bypassing the rate limit in exchange for a higher fee. For
-  every transaction that exceeds the limit the user must pay a fee with a 1.2
-  multiplier of the previous transaction fee. This quickly gets very expensive
-  for an attacker, but allows flexibility for a normal user if waiting is not an
-  option.
+  In addition to the address fee mentioned in the above paragraph, there is an
+  associated \say{global} network fee. The network fee works in the same way as
+  the address based fee and protects the network from flooding via multiple
+  addresses. The global fee is dynamically adjusted based on network usage.\\
 
-  \vspace{3mm}
-  Sample based on transferring funds using any asset with a base fee of
-  0.00000500 coins:
+  This quickly gets expensive for an attacker attempting to
+  \gls{Denial-of-Service} (DoS) the network, but allows flexibility for a normal
+  user when waiting for the block window to reset back to the minimum fee is not
+  an option.\\
+
+  Sample based on transferring funds using any asset with a minimum fee of
+  0.00000500 coins with a 2.00000000 multiplier:
 
   \vspace{3mm}
   \begin{tabular}{@{}lr@{}}
-    Fees & Transaction Priority \\ \toprule
-    0.00000500 & Normal    \\
-    0.00000600 & Urgent    \\
-    0.00000720 & Urgent    \\
-    0.00000864 & Urgent    \\ \midrule{}
-    Total Fees & 0.00002684 \\
+    Fees & Block Height     \\ \toprule
+    0.00000500 & 10         \\
+    0.00001000 & 11         \\
+    0.00002000 & 12         \\
+    0.00000500 & $\leftarrow{}$ block window reset $\rightarrow{}$ 20 \\ \midrule{}
+    Total Fees & 0.00004000 \\
     \bottomrule
   \end{tabular}
 
