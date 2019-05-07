@@ -248,15 +248,15 @@
   adjust costs based on network usage.\\
 
   Sample based on transferring funds using any asset with a minimum fee of
-  0.00000500 coins with a 2.00000000 multiplier:
+  0.0050 coins with a 1.5000 multiplier:
 
   \vspace{3mm}
   \begin{tabular}{@{}lr@{}}
     Fees & Block Height     \\ \toprule
-    0.00000500 & 10         \\
-    0.00001000 & 11         \\
-    0.00002000 & 12         \\
-    0.00000500 & $\leftarrow{}$ block window reset $\rightarrow{}$ 20 \\ \midrule{}
+    0.0050 & 10         \\
+    0.0075 & 11         \\
+    0.0112 & 12         \\
+    0.0050 & $\leftarrow{}$ block window reset $\rightarrow{}$ 20 \\ \midrule{}
     Total Fees & 0.00004000 \\
     \bottomrule
   \end{tabular}
