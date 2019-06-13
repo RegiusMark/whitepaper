@@ -221,12 +221,6 @@
   reserves.
 
   \subsection{Fees}
-  Fees will be paid respective to the asset that is being transferred or the
-  asset the transaction type expects. The fee rate may differ between the assets
-  and will be paid in their respective asset. Gold transfers will pay the fee in
-  gold respectively and likewise for silver. Any fees collected will be rewarded
-  to the minters.\\
-
   Transaction fee costs start with a minimum fee. For every additional
   transaction accepted within the block window the minimum fee is exponentially
   multiplied by the number of transactions accepted from the applicable address.
@@ -244,7 +238,8 @@
   the block window to reset back to the minimum fee is not an option.\\
 
   Our fees will remain low because of our dynamic fee model allowing us to
-  adjust costs based on network usage.\\
+  adjust costs based on network usage. Any fees collected will be rewarded to
+  the network operators.\\
 
   Sample based on transferring funds using any asset with a minimum fee of
   0.0050 coins with a 1.5000 multiplier:
